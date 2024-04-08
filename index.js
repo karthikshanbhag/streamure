@@ -45,10 +45,6 @@ io.on("connection", socket => {
     console.log("socket connected", socket.id);
     socket.on('binarystream', stream => {
         console.log("binary stream comming...");
-
-        // ffmpegProcess.stdin.write(stream, (err)=>{
-        //     console.log("error", err);
-        // });
         try {
             ffmpegProcess.stdin.write(stream, (err) => {
                 if (err) {
